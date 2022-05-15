@@ -1,4 +1,6 @@
+import 'package:calculator/app/controller/value_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Input extends StatefulWidget {
   const Input({Key? key}) : super(key: key);
@@ -9,7 +11,15 @@ class Input extends StatefulWidget {
 
 class _InputState extends State<Input> {
   @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    ValueController valueController =
+        Provider.of<ValueController>(context, listen: true);
     return Expanded(
       child: SizedBox(
         width: double.infinity,
@@ -20,7 +30,7 @@ class _InputState extends State<Input> {
             Padding(
               padding: EdgeInsets.only(right: 10),
               child: Text(
-                "0",
+                valueController.value,
                 style: TextStyle(
                   fontSize: 50,
                 ),

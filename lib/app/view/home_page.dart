@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         body: Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
+      children: const [
         Input(),
         Keyboard(),
       ],
